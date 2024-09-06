@@ -1,2 +1,2 @@
-# ezi-basement
-My Website
+# Ezi's Basement
+Just another website
