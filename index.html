@@ -31,9 +31,20 @@
 <h2>Contact</h4>
 <span>Contact me with eziko@eziko.xyz</span>
 
-    <script>
-document.onclick = () => document.querySelector('audio').play();
-document.onkeydown = () => document.querySelector('audio').play();
-</script>
+<script>
+    const urls = ["/menu.mp3", "/menu2.mp3", "/menu3.mp3", "/menu4.mp3"];
+    
+    let played = false;
+    
+    function play() {
+        if (played) return;
+        const adio = new Audio(urls[Math.floor(Math.random() * urls.length)]);
+        adio.play();
+        played = true;
+    }
+    
+    document.onclick = play;
+    document.onkeydown = play;
+    </script>
 </body>
 </html>
