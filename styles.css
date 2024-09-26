@@ -2,4 +2,15 @@
 
 body {
   font-family: "Lexend", Helvetica, sans-serif;
+  color: rgb(255, 255, 255);
+}
+
+h1 {
+  color: rgb(255, 255, 255);
+}
+h2 {
+  color: rgb(255, 255, 255);
+}
+h4 {
+  color: rgb(255, 255, 255);
 }
