@@ -1,54 +1,200 @@
-center div > * {
-    text-align: left;
-}
+@import url('https://fonts.googleapis.com/css2?family=Lexend:wght@100..900&display=swap');
 
 body {
-    background-size: 40px 40px;
-    background-image:
-        linear-gradient(to right, grey 1px, transparent 1px),
-        linear-gradient(to bottom, grey 1px, transparent 1px);
-    position: relative;
-    min-height: 100vh;
+  margin: 0;
+  background-size: 40px 40px;
+  background-color: #333;
+  background-image:
+    linear-gradient(to right, grey 1px, transparent 1px),
+    linear-gradient(to bottom, grey 1px, transparent 1px);
+  min-height: 100vh;
+  font-family: "Lexend", cursive, Arial, Helvetica, sans-serif;
+  animation: scroll-grid 5s linear infinite;
+}
+
+main {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+.left, .right {
+  float: left;
+  width: 25%;
+  height: 100%;
+}
+
+.middle {
+  float: left;
+  width: 50%;
+  height: 100%;
+}
+
+table {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 10px;
+}
+
+@keyframes scroll-grid {
+  0% {
+    background-position: 0 0, 0 0;
+  }
+  100% {
+    background-position: 0 -40px, 0 -40px;
+  }
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to top, transparent, #222);
+  z-index: -1;
 }
 
 body::after {
-    content: "";
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to bottom, transparent, white);
-    z-index: -1;
-    pointer-events: none; /* today i learned.. */
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to bottom, transparent, #222);
+  z-index: -1;
 }
 
-
-.content {
-    background-color: white;
-    width: fit-content;
-    border: 2px solid black;
-    display: flex;
-    align-items: stretch;
+main-other {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.content nav {
-    align-self: stretch;
-    width: 250px;
-    border-right: 2px solid black;
-    padding: 5px;
+main-but-for-the-left-side {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
 }
 
-.content content {
-    width: fit-content;
-    height: 100%;
-    padding: 10px;
+main-but-for-the-right-side {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
 }
 
-.content nav button {
-    width: 100%;
+.textalignthing {
+  text-align: right;
 }
 
-.flex {
-    display: flex;
+a {color:white;}
+
+.container {
+  padding: 10px;
+  background-color: #333;
+  transition: 0.3s;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+  border-radius: 8px;
+  color: white;
+}
+
+.transparent {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+.ml-5 {
+  margin-left: 10px;
+}
+
+.mr-5 {
+  margin-right: 10px;
+}
+
+.rainbow {
+  --angle: 0deg;
+  border: 5px solid;
+	border-image: conic-gradient(from var(--angle), red, yellow, lime, aqua, blue, magenta, red) 1;
+  animation: 10s rotate linear infinite;
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  border-radius: 8px;
+}
+
+@keyframes rotate {
+	to {
+		--angle: 360deg;
+	}
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+.container:not(.transparent):hover {
+  background-color: #222;
+}
+
+/* CSS */
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #FCFCFD;
+  border-radius: 4px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 2px 4px,rgba(45, 35, 66, 0.3) 0 7px 13px -3px,#D6D6E7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395A;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: "JetBrains Mono",monospace;
+  height: 48px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 16px;
+  padding-right: 16px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow .15s,transform .15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow,transform;
+  font-size: 18px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.button-30:focus {
+  box-shadow: #D6D6E7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px, rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #D6D6E7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #D6D6E7 0 3px 7px inset;
+  transform: translateY(2px);
 }
